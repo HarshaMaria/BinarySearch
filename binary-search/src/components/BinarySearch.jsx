@@ -18,12 +18,23 @@ const BinarySearch = () => {
       steps.push({ start, end, mid });
 
       if (array[mid] === value) {
+        start = mid;
+        end = mid;
+        steps.push({ start, end, mid });
         setSearchSteps(steps);
         return mid;
       } else if (array[mid] < value) {
+
         start = mid + 1;
+        steps.push({ start, end, mid });
+
+        setSearchSteps(steps);
+
       } else {  
         end = mid - 1;
+        steps.push({ start, end, mid });
+
+        setSearchSteps(steps);
       }
     }
 
